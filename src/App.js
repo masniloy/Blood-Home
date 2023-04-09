@@ -7,6 +7,7 @@ import Home from './Pages/Home/Home/Home';
 import About from './Pages/About/About';
 import DonateBlood from './Pages/DonateBlood/DonateBlood';
 import FiendDonor from './Pages/FiendDonor/FiendDonor';
+import Login from './Pages/Login/Login';
 
 function App() {
   const router = createBrowserRouter([
@@ -34,6 +35,10 @@ function App() {
         {
           path: '/FiendDonor',
           element: <FiendDonor></FiendDonor>
+        },
+        {
+          path: '/Login',
+          element: <Login></Login>
         }
       ]
     }

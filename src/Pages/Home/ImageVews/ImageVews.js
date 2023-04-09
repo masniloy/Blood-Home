@@ -11,30 +11,30 @@ import abn from "../../../New folder/image/AB-.gif"
 
 const ImageVews = () => {
     return (
-        <div className=' mt-20 flex  justify-center items-center'>
+        <div className=' mt-24  flex  justify-center items-center'>
             <div className="carousel rounded-box">
-                <div className="carousel-item h-36 w-36">
+                <div className="carousel-item h-24 w-24 mx-8">
                     <img src={ap} alt="Burger" />
                 </div>
-                <div className="carousel-item h-36 w-36">
+                <div className="carousel-item h-24 w-24 mx-8">
                     <img src={an} alt="Burger" />
                 </div>
-                <div className="carousel-item h-36 w-36">
+                <div className="carousel-item h-24 w-24 mx-8">
                     <img src={bp} alt="Burger" />
                 </div>
-                <div className="carousel-item h-36 w-36">
+                <div className="carousel-item h-24 w-24 mx-8">
                     <img src={bn} alt="Burger" />
                 </div>
-                <div className="carousel-item h-36 w-36">
+                <div className="carousel-item h-24 w-24 mx-8">
                     <img src={op} alt="Burger" />
                 </div>
-                <div className="carousel-item h-36 w-36">
+                <div className="carousel-item h-24 w-24 mx-8">
                     <img src={on} alt="Burger" />
                 </div>
-                <div className="carousel-item h-36 w-36">
+                <div className="carousel-item h-24 w-24 mx-8">
                     <img src={abp} alt="Burger" />
                 </div>
-                <div className="carousel-item h-36 w-36">
+                <div className="carousel-item h-24 w-24 mx-8">
                     <img src={abn} alt="Burger" />
                 </div>
             </div>
