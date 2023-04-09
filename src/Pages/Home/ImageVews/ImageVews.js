@@ -11,7 +11,7 @@ import abn from "../../../New folder/image/AB-.gif"
 
 const ImageVews = () => {
     return (
-        <div className=' mt-24  flex  justify-center items-center'>
+        <div className=' mt-16 -mb-6 flex  justify-center items-center '>
             <div className="carousel rounded-box">
                 <div className="carousel-item h-24 w-24 mx-8">
                     <img src={ap} alt="Burger" />

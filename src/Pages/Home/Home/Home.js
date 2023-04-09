@@ -4,6 +4,7 @@ import AboutBD from '../AboutBD/AboutBD';
 import MoreDetail from '../MoreDetail/MoreDetail';
 import ImageVews from '../ImageVews/ImageVews';
 import Network from '../Network/Network';
+import ContactUs from '../ContactUs/ContactUs';
 
 
 const Home = () => {
@@ -11,8 +12,9 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <AboutBD></AboutBD>
-            <MoreDetail></MoreDetail>
             <Network></Network>
+            <MoreDetail></MoreDetail>
+            <ContactUs></ContactUs>
             <ImageVews></ImageVews>
 
         </div>

@@ -1,15 +1,18 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUsers, faLocationDot, faDroplet } from '@fortawesome/free-solid-svg-icons'
+import { faUsers, faLocationDot, faDroplet, faHospitalUser } from '@fortawesome/free-solid-svg-icons'
+
+// shadow-xl lg:-ml-32
+
 
 const Network = () => {
     return (
         <div>
-            <div className="stats shadow w-full max-w-7xl h-32">
+            <div className="stats shado  w-full max-w-7xl h-32 mt-20 bg-red-50  ">
 
                 <div className="stat">
                     <div className="stat-figure text-red-600 ">
-                        <FontAwesomeIcon className=' h-10  ' icon={faUsers} />
+                        <FontAwesomeIcon className=' h-10  ' icon={faHospitalUser} />
                     </div>
                     <div className="stat-title">Donors</div>
                     <div className="stat-value">3.5K</div>
@@ -17,10 +20,10 @@ const Network = () => {
 
                 <div className="stat">
                     <div className="stat-figure text-red-600">
-                        <FontAwesomeIcon className=' h-10' icon={faDroplet} />
+                        <FontAwesomeIcon className=' h-10' icon={faUsers} />
                     </div>
-                    <div className="stat-title">Blood Groups</div>
-                    <div className="stat-value">8</div>
+                    <div className="stat-title">Total User</div>
+                    <div className="stat-value">11.8K</div>
                 </div>
 
                 <div className="stat">
