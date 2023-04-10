@@ -8,7 +8,7 @@ import img6 from '../../../New folder/image/image (6).jpg'
 
 const MoreDetail = () => {
     return (
-        <div className=' w-full max-w-7xl p-5 pb-10 mx-auto mb-10 gap-5 columns-3 mt-16 '>
+        <div className=' w-full max-w-7xl p-5 pb-10 mx-auto mb-10 gap-5 columns-3 mt-20 '>
 
             <img src={img1} alt="Image" />
             <img src={img2} alt="Image" />
