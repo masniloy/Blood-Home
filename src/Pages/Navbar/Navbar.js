@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <div>
-            <div className="navbar bg-red-600">
-                <div className="navbar-start">
+        <div className='mb-20'>
+            <div className="navbar bg-red-600 fixed top-0 z-50 ">
+                <div className="navbar-start ">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -31,7 +31,7 @@ const Navbar = () => {
                     </div>
                     <Link to="/"><a className="btn btn-ghost normal-case text-xl text-white">Blood Home</a></Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-center  hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <Link to="/Home"><li><a className='text-white'>Home</a></li></Link>
                         <li tabIndex={0}>
