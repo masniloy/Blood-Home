@@ -3,7 +3,7 @@ import React from 'react';
 const ContactUs = () => {
     return (
         <div className='stats w-full max-w-7xl'>
-            <div className=' bg-red-50 p-5 stats-vertical' >
+            <div className=' bg-red-100 p-5 stats-vertical' >
                 <h1 className='text-3xl font-bold my-3'>Contact us</h1>
                 <input type="text" placeholder="Your Name" className="input input-sm mx-4 my-2 input-bordered input-error w-full max-w-xs drop-shadow-md" />
 

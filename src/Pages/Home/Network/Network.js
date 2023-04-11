@@ -8,7 +8,7 @@ import { faUsers, faLocationDot, faDroplet, faHospitalUser } from '@fortawesome/
 const Network = () => {
     return (
         <div>
-            <div className="stats shado  w-full max-w-7xl h-32 mt-20 bg-red-50  ">
+            <div className="stats shado  w-full max-w-7xl h-32 mt-20 bg-red-100  ">
 
                 <div className="stat">
                     <div className="stat-figure text-red-600 ">
