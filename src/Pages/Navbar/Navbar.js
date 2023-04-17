@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
     return (
@@ -48,7 +50,25 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to="/Login"><a className="btn border-white bg-red-600">Login</a></Link>
+
+
+
+                    <ul className="menu menu-horizontal px-1">
+
+                        <li tabIndex={0} className='mr-2'>
+                            <a className='text-white'>
+                                <Link to=""><FontAwesomeIcon className=' h-5 ' icon={faUser} /></Link>
+                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                            </a>
+                            <ul className="p-2 ">
+                                <Link to="/Login" ><li><a><b>Login</b></a></li></Link>
+                                <Link to="/Register"><li><a><b>Register</b></a></li></Link>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                    {/* <Link to="/Login"><a className="btn border-white bg-red-600">Login</a></Link> */}
                 </div>
             </div>
         </div>
