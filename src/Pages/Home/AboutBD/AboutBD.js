@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const AboutBD = () => {
     return (
         <div>
-            <div className="hero mt-20  ">
+            <div className="hero mt-20 stats ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src={about} className="max-w-sm rounded-lg " />
                     <div>
