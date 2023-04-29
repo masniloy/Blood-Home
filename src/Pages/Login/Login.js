@@ -7,8 +7,8 @@ import { faFacebook, faGoogle, faLinkedin } from '@fortawesome/free-brands-svg-i
 
 const Login = () => {
     return (
-        <div className=' stats'>
-            <div className="hero min-h-screen  ">
+        <div className=' stats '>
+            <div className="hero min-h-screen ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center ">
                         <h1 className="text-5xl font-bold mb-5">Login now!</h1>
@@ -16,13 +16,13 @@ const Login = () => {
 
                         <div className=' px-5  lg:stats gap-px  w-full'>
                             <div className="form-control mt-6 lg:w-64">
-                                <button className="btn bg-red-600 border-red-600 rounded-full">With Google <FontAwesomeIcon className=' h-6 ml-4' icon={faGoogle} /></button>
+                                <button className="btn bg-red-600 border-red-600 rounded-full">Google <FontAwesomeIcon className=' h-6 ml-4' icon={faGoogle} /></button>
                             </div>
                             <div className="form-control mt-6 lg:w-64">
-                                <button className="btn bg-sky-600 border-sky-600 rounded-full">With Facebook <FontAwesomeIcon className=' h-6 ml-4' icon={faFacebook} /></button>
+                                <button className="btn bg-sky-600 border-sky-600 rounded-full">Facebook <FontAwesomeIcon className=' h-6 ml-4' icon={faFacebook} /></button>
                             </div>
                             <div className="form-control mt-6 lg:w-64">
-                                <button className="btn  bg-sky-700 border-sky-700 rounded-full">With Linkedin <FontAwesomeIcon className=' h-6 ml-4' icon={faLinkedin} /></button>
+                                <button className="btn  bg-sky-700 border-sky-700 rounded-full">Linkedin <FontAwesomeIcon className=' h-6 ml-4' icon={faLinkedin} /></button>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@ const Login = () => {
                             </div>
                             <div>
                                 <label className="label mt-4">
-                                    <span className="label-text ">I don't have any account !</span><Link className=' text-red-600'>Creat new account</Link>
+                                    <span className="label-text ">I don't have any account !</span><Link to='/Register' className=' text-red-600'>Creat new account</Link>
                                 </label>
 
 
