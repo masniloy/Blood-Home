@@ -9,6 +9,7 @@ import DonateBlood from './Pages/DonateBlood/DonateBlood';
 import FiendDonor from './Pages/FiendDonor/FiendDonor';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
+import BloodRequest from './Pages/BloodRequest/BloodRequest';
 
 function App() {
   const router = createBrowserRouter([
@@ -45,6 +46,11 @@ function App() {
         {
           path: '/Register',
           element: <Register></Register>
+        }
+        ,
+        {
+          path: '/BloodRequest',
+          element: <BloodRequest></BloodRequest>
         }
       ]
     }

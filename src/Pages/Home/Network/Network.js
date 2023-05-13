@@ -15,7 +15,7 @@ const Network = () => {
                         <FontAwesomeIcon className=' h-10  ' icon={faHospitalUser} />
                     </div>
                     <div className="stat-title">Donors</div>
-                    <div className="stat-value">3.5K</div>
+                    <div className="stat-value">7.5K</div>
                 </div>
 
                 <div className="stat">

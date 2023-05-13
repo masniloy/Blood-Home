@@ -45,7 +45,7 @@ const Register = () => {
                                 </label>
                                 <input type="text" placeholder="password" className="input input-bordered bg-red-50 rounded-full " />
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover ">Forgot password?</a>
+
                                 </label>
                             </div>
                             <div className="form-control mt-6">
@@ -53,7 +53,7 @@ const Register = () => {
                             </div>
                             <div>
                                 <label className="label mt-4">
-                                    <span className="label-text ">I have an account !</span><Link to='/Register' className=' text-red-600'>Login now</Link>
+                                    <span className="label-text ">I have an account !</span><Link to='/Login' className=' text-red-600'>Login now</Link>
                                 </label>
                             </div>
                         </div>

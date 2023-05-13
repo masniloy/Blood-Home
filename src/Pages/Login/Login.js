@@ -48,7 +48,8 @@ const Login = () => {
                             </div>
                             <div>
                                 <label className="label mt-4">
-                                    <span className="label-text ">I don't have any account !</span><Link to='/Register' className=' text-red-600'>Creat new account</Link>
+                                    <span className="label-text ">I don't have any account !</span>
+                                    <Link to='/Register' className=' text-red-600'>Creat new account</Link>
                                 </label>
 
 

@@ -20,10 +20,11 @@ const Navbar = () => {
                                     Blood
                                     <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                                 </a>
-                                <ul className="p-2">
+                                <ul className="p-2 bg-white">
                                     <Link to="/FiendDonor"><li><a>Fiend Donor</a></li></Link>
 
                                     <Link to="/DonateBlood"><li><a>Donate Blood</a></li></Link>
+                                    <Link to="/BloodRequest"><li><a>Blood Request</a></li></Link>
                                 </ul>
                             </li>
                             <Link to="/About"><li><a >About Us</a></li></Link>
@@ -41,9 +42,10 @@ const Navbar = () => {
                                 Blood
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </a>
-                            <ul className="p-2">
+                            <ul className="p-2 bg-white">
                                 <Link to="/FiendDonor" ><li><a><b>Fiend Donor</b></a></li></Link>
                                 <Link to="/DonateBlood"><li><a><b>Donate Blood</b></a></li></Link>
+                                <Link to="/BloodRequest"><li><a><b>Blood Request</b></a></li></Link>
                             </ul>
                         </li>
                         <Link to="/About"><li><a className='text-white'>About Us</a></li></Link>
@@ -60,7 +62,7 @@ const Navbar = () => {
                                 <Link to=""><FontAwesomeIcon className=' h-5  ' icon={faUser} /></Link>
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </a>
-                            <ul className="p-2 ">
+                            <ul className="p-2 bg-white">
                                 <Link to="/Login" ><li><a><b>Login</b></a></li></Link>
                                 <Link to="/Register"><li><a><b>Register</b></a></li></Link>
                             </ul>
