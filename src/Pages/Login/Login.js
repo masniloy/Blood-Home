@@ -7,8 +7,8 @@ import { faFacebook, faGoogle, faLinkedin } from '@fortawesome/free-brands-svg-i
 
 const Login = () => {
     return (
-        <div className=' stats '>
-            <div className="hero min-h-screen ">
+        <div className=' stats lg:my-20 lg:py-10'>
+            <div className="hero  ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center ">
                         <h1 className="text-5xl font-bold mb-5">Login now!</h1>
