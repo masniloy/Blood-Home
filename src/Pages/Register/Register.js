@@ -1,10 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Form, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faGoogle, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { AuthContext } from '../../Context/AuthPro/AuthPro';
+
+
 
 const Register = () => {
+
+    const { creatUser } = useContext(AuthContext);
+    console.log(creatUser);
+    const userDetail = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, email, password);
+
+        creatUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log('User:', user);
+            })
+
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+
+
+
+
     return (
         <div className=' stats '>
             <div className="hero lg:my-20 lg:py-10 ">
@@ -25,25 +54,29 @@ const Register = () => {
                             </div>
                         </div>
                     </div>
+
+
+
+
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div className="card-body">
+                        <Form onSubmit={userDetail} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-semibold">Name</span>
                                 </label>
-                                <input type="text" placeholder="name" className="input input-bordered bg-red-50 rounded-full" />
+                                <input type="text" name='name' placeholder="name" className="input input-bordered bg-red-50 rounded-full" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-semibold">Email</span>
                                 </label>
-                                <input type="text" placeholder="email" className="input input-bordered bg-red-50 rounded-full" />
+                                <input type="email" name='email' placeholder="email" className="input input-bordered bg-red-50 rounded-full" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-semibold">Password</span>
                                 </label>
-                                <input type="text" placeholder="password" className="input input-bordered bg-red-50 rounded-full " />
+                                <input type="password" name='password' placeholder="password" className="input input-bordered bg-red-50 rounded-full " required />
                                 <label className="label">
 
                                 </label>
@@ -56,7 +89,7 @@ const Register = () => {
                                     <span className="label-text ">I have an account !</span><Link to='/Login' className=' text-red-600'>Login now</Link>
                                 </label>
                             </div>
-                        </div>
+                        </Form>
                     </div>
                 </div>
             </div>

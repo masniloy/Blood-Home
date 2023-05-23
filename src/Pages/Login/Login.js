@@ -1,11 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Form, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faGoogle, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 
 const Login = () => {
+
+    const userLogin = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password)
+    }
+
+
+
+
     return (
         <div className=' stats lg:my-20 lg:py-10'>
             <div className="hero  ">
@@ -26,19 +38,23 @@ const Login = () => {
                             </div>
                         </div>
                     </div>
+
+
+
+
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div className="card-body">
+                        <Form onSubmit={userLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-semibold">Email</span>
                                 </label>
-                                <input type="text" placeholder="email" className="input input-bordered bg-red-50 rounded-full" />
+                                <input type="email" name='email' placeholder="email" className="input input-bordered bg-red-50 rounded-full" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-semibold">Password</span>
                                 </label>
-                                <input type="text" placeholder="password" className="input input-bordered bg-red-50 rounded-full " />
+                                <input type="password" name='password' placeholder="password" className="input input-bordered bg-red-50 rounded-full " />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover ">Forgot password?</a>
                                 </label>
@@ -52,9 +68,8 @@ const Login = () => {
                                     <Link to='/Register' className=' text-red-600'>Creat new account</Link>
                                 </label>
 
-
                             </div>
-                        </div>
+                        </Form>
                     </div>
                 </div>
             </div>

@@ -55,12 +55,6 @@ const DonateBlood = () => {
                     </div>
                 </div>
 
-
-
-
-
-
-
                 <button className="btn my-6 w-full max-w-xs drop-shadow-lg mb-10 border-red-600 bg-red-600">Join</button>
             </div>
         </div>
