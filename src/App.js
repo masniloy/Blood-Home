@@ -10,6 +10,7 @@ import FiendDonor from './Pages/FiendDonor/FiendDonor';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import BloodRequest from './Pages/BloodRequest/BloodRequest';
+import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 
 function App() {
   const router = createBrowserRouter([
@@ -32,7 +33,7 @@ function App() {
         },
         {
           path: '/DonateBlood',
-          element: <DonateBlood></DonateBlood>
+          element: <PrivateRoutes><DonateBlood></DonateBlood></PrivateRoutes>
         },
         {
           path: '/FiendDonor',
@@ -50,7 +51,8 @@ function App() {
         ,
         {
           path: '/BloodRequest',
-          element: <BloodRequest></BloodRequest>
+          element: <PrivateRoutes><BloodRequest></BloodRequest></PrivateRoutes>
+
         }
       ]
     }

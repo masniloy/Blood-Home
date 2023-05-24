@@ -1,20 +1,46 @@
-import React from 'react';
-import { Form, Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faGoogle, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { AuthContext } from '../../Context/AuthPro/AuthPro';
 
 
 const Login = () => {
 
+    const { signIn, signInWithGoogle } = useContext(AuthContext)
+    const location = useLocation();
+    const fromLocat = location.state?.fromLocat?.pathname || '/';
+    const navigate = useNavigate()
     const userLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
+
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                navigate(fromLocat, { replace: true })
+            })
+            .catch(error => console.error(error))
+
     }
 
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate(fromLocat, { replace: true })
+
+            })
+            .catch(error => console.log(error))
+    }
 
 
 
@@ -28,7 +54,7 @@ const Login = () => {
 
                         <div className=' px-5  lg:stats gap-px  w-full'>
                             <div className="form-control mt-6 lg:w-64">
-                                <button className="btn bg-red-600 border-red-600 rounded-full">Google <FontAwesomeIcon className=' h-6 ml-4' icon={faGoogle} /></button>
+                                <button onClick={handleGoogleSignIn} className="btn bg-red-600 border-red-600 rounded-full">Google <FontAwesomeIcon className=' h-6 ml-4' icon={faGoogle} /></button>
                             </div>
                             <div className="form-control mt-6 lg:w-64">
                                 <button className="btn bg-sky-600 border-sky-600 rounded-full">Facebook <FontAwesomeIcon className=' h-6 ml-4' icon={faFacebook} /></button>

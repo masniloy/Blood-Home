@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { AuthContext } from '../../Context/AuthPro/AuthPro';
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+    console.log(user);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
+
+
     return (
         <div className='mb-20'>
             <div className="navbar bg-red-600 fixed top-0 z-50 ">
@@ -63,8 +75,13 @@ const Navbar = () => {
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </a>
                             <ul className="p-2 bg-white">
-                                <Link to="/Login" ><li><a><b>Login</b></a></li></Link>
-                                <Link to="/Register"><li><a><b>Register</b></a></li></Link>
+                                {
+                                    user?.email ?
+                                        <Link onClick={handleLogOut}><li><a><b>Log Out</b></a></li></Link>
+                                        :
+                                        <Link to="/Login" ><li><a><b>Login</b></a></li></Link>
+
+                                }
                             </ul>
                         </li>
 
