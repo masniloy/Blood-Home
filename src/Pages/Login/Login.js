@@ -11,8 +11,10 @@ const Login = () => {
 
     const { signIn, signInWithGoogle } = useContext(AuthContext)
     const location = useLocation();
-    const fromLocat = location.state?.fromLocat?.pathname || '/';
-    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || '/';
+    const navigate = useNavigate();
+
+
     const userLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -25,7 +27,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
-                navigate(fromLocat, { replace: true })
+                navigate(from, { replace: true });
             })
             .catch(error => console.error(error))
 
@@ -37,7 +39,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate(fromLocat, { replace: true })
+                navigate(from, { replace: true });
 
             })
             .catch(error => console.log(error))
@@ -59,8 +61,6 @@ const Login = () => {
 
 
                     </div>
-
-
 
 
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-xl bg-base-100">

@@ -55,7 +55,7 @@ const Register = () => {
             <div className="hero lg:py-5 ">
                 <div className="hero-content flex-col lg:flex-row-reverse bg-red-100 lg:p-10 rounded-md shadow-2xl lg:mx-10 mb-16">
                     <div className="text-center ">
-                        <h1 className="text-5xl font-bold mb-5">Register now!</h1>
+                        <h1 className="text-5xl font-bold mb-5">Signup now!</h1>
                         <p className="py-6 lg:px-6">Though Bangladesh has more than 160 million people, the number of safe blood bank is very few. Without divisional towns, there is hardly any blood bank. But a huge amount of blood is needed for treatment purposes. A good number of accidents take place every day where blood needs essentially.</p>
 
                         {/* <div className=' px-5  lg:stats gap-px  w-full'>

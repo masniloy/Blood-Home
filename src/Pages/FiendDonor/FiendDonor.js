@@ -10,7 +10,7 @@ const FiendDonor = () => {
     return (
         <div  >
 
-            <div className=' bg-red-100'>
+            <div className=' bg-red-100 -mt-10'>
                 <div className='my-16  lg:stats p-11'>
                     <div className='mx-1 '>
                         <select className="select select-bordered w-56 max-w-xs bg-red-50">

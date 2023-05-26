@@ -7,7 +7,7 @@ const AboutBD = () => {
         <div>
             <div className="hero mt-20 stats ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <img src={about} className="max-w-sm rounded-lg " />
+                    <img src={about} className="max-w-md rounded-lg " />
                     <div>
                         <h1 className="text-3xl font-bold">About Blood Home!</h1>
                         <p className="py-6">Though Bangladesh has more than 160 million people, the number of safe blood bank is very few. Without divisional towns, there is hardly any blood bank. But a huge amount of blood is needed for treatment purposes. A good number of accidents take place every day where blood needs essentially. As a result, people fall in real trouble to manage blood. But there are many blood donors who are interested in donating blood but don’t know who needs blood. The communication gap is resulting in the loss of many lives. <br /><br />
