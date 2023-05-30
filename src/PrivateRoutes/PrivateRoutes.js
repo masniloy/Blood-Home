@@ -1,14 +1,13 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../Context/AuthPro/AuthPro';
 import { Navigate, useLocation } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
 const PrivateRoutes = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
-    // const location = useLocation();
-    // state={{ from: location }} replace
 
     if (loading) {
-        return <div>loding...</div>
+        return <div><Loading></Loading></div>
     }
 
     if (user) {
@@ -18,3 +17,7 @@ const PrivateRoutes = ({ children }) => {
 };
 
 export default PrivateRoutes;
+
+
+    // const location = useLocation();
+    // state={{ from: location }} replace

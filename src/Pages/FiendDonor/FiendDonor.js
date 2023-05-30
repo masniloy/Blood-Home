@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Donor from '../Donor/Donor';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons'
+import Loading from "../../Loading/Loading";
+import { AuthContext } from "../../Context/AuthPro/AuthPro";
 const FiendDonor = () => {
 
+
     const [date, setDate] = useState(new Date());
+
+    const { loading } = useContext(AuthContext);
+
+    if (loading) {
+        return <div><Loading></Loading></div>
+    }
+
+
     return (
         <div  >
 

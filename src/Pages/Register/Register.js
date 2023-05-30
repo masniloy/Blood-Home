@@ -6,10 +6,11 @@ import { faFacebook, faGoogle, faLinkedin } from '@fortawesome/free-brands-svg-i
 import { AuthContext } from '../../Context/AuthPro/AuthPro';
 import reglogin from '../../New folder/image/regandlogin.gif';
 import googlelogo from '../../New folder/image/google logo.png';
+import Loading from '../../Loading/Loading';
 
 const Register = () => {
 
-    const { creatUser, signInWithGoogle } = useContext(AuthContext);
+    const { creatUser, signInWithGoogle, loading } = useContext(AuthContext);
     console.log(creatUser);
     const location = useLocation();
     const fromLocat = location.state?.fromLocat?.pathname || '/';
@@ -47,6 +48,10 @@ const Register = () => {
             .catch(error => console.log(error))
     }
 
+
+    if (loading) {
+        return <div><Loading></Loading></div>
+    }
 
 
 

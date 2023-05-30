@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import about from '../../../New folder/image/About.gif';
 import { Link } from 'react-router-dom';
+import Loading from '../../../Loading/Loading';
+import { AuthContext } from '../../../Context/AuthPro/AuthPro';
 
 const AboutBD = () => {
+
+    const { user, loading } = useContext(AuthContext);
+
+    if (loading) {
+        return <div><Loading></Loading></div>
+    }
     return (
         <div>
             <div className="hero mt-20 stats ">
