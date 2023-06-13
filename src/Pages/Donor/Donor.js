@@ -1,157 +1,57 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import SingleDonor from '../SingleDonor/SingleDonor';
 
 
 const Donor = () => {
-    return (
-        <div className='' >
-            <div className="overflow-x-auto lg:mx-11 pb-9">
-                <table className="table table-zebra w-full">
-                    {/* head */}
-                    <thead>
-                        <tr>
+    const [DonorDetail, setDonorDetail] = useState([]);
+    useEffect(() => {
+        fetch('https://blood-home-server.vercel.app/DonorDetail')
+            .then(res => res.json())
+            .then(data => setDonorDetail(data))
+    }, [])
+    console.log(DonorDetail);
 
-                            <th >Name</th>
-                            <th >District</th>
-                            <th >Blood group</th>
-                            <th></th>
+    return (
+        <div className='stats' >
+            <div className="overflow-x-auto lg:mx-11 pb-9">
+                <table className="table">
+                    {/* head */}
+
+                    <thead>
+                        <tr className=''>
+
+                            <th className=' flex' >
+                                <h1 className='w-80'>Name</h1>
+                                <h1 className='w-80 ml-8 text-center'>District</h1>
+                                <h1 className='w-80 ml-8 text-center'>Blood group</h1>
+
+
+                            </th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {/* row 1 */}
-                        <tr>
+                    <tr>
+                        <tbody>
 
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">M A Saimun Niloy</div>
-                                        <div className="text-sm opacity-50 text-red-600 font-bold ">Eligible</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Kushtia
+                            {
+                                DonorDetail.map(donors => <SingleDonor
 
-                            </td>
-                            <td className='font-bold'>A+</td>
-                            <th>
-                                <button className="btn bg-red-600 btn-xs border-red-600 px-4">Contact</button>
-                            </th>
-                        </tr>
-                        {/* row 2 */}
-                        <tr>
+                                    key={donors._id}
+                                    donors={donors}
+                                ></SingleDonor>)
+                            }
+                        </tbody>
 
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">S M Mustafizur Rahaman</div>
-                                        <div className="text-sm opacity-50 text-red-600 font-bold ">Eligible</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Kurigram
-
-                            </td>
-                            <td className='font-bold'>A+</td>
-                            <th>
-                                <button className="btn bg-red-600 btn-xs border-red-600 px-4">Contact</button>
-                            </th>
-                        </tr>
-                        {/* row 3 */}
-                        <tr>
-
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">Md Sabbir Ahmed</div>
-                                        <div className="text-sm opacity-50 text-red-600 font-bold ">Not Eligible</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Kushtia
-
-                            </td>
-                            <td className='font-bold'>B+</td>
-                            <th>
-                                <button className="btn bg-red-600 btn-xs border-red-600 px-4">Contact</button>
-                            </th>
-                        </tr>
-                        {/* row 4 */}
-                        <tr>
-
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">Md Firoz Kabir</div>
-                                        <div className="text-sm opacity-50 text-red-600 font-bold ">Not Eligible</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Rongpur
-
-                            </td>
-                            <td className='font-bold'>O+</td>
-                            <th>
-                                <button className="btn bg-red-600 btn-xs border-red-600 px-4">Contact</button>
-                            </th>
-                        </tr>
-                        {/* row 4 */}
-                        <tr>
-
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">Md Shariar Ahamed</div>
-                                        <div className="text-sm opacity-50 text-red-600 font-bold ">Eligible</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Dhaka
-
-                            </td>
-                            <td className='font-bold'>B+</td>
-                            <th>
-                                <button className="btn bg-red-600 btn-xs border-red-600 px-4">Contact</button>
-                            </th>
-                        </tr>
-
-                    </tbody>
+                    </tr>
                     {/* foot */}
                     <tfoot>
                         <tr>
+                            <th className=' flex' >
+                                <h1 className='w-80'>Name</h1>
+                                <h1 className='w-80 ml-8 text-center'>District</h1>
+                                <h1 className='w-80 ml-8 text-center'>Blood group</h1>
 
-                            <th>Name</th>
-                            <th>District</th>
-                            <th>Blood Group</th>
-                            <th></th>
+                            </th>
+
                         </tr>
                     </tfoot>
 

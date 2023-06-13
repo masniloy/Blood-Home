@@ -74,7 +74,7 @@ const FiendDonor = () => {
                 </div>
             </div>
 
-            <div className='mt-10'>
+            <div className=' mt-40'>
                 <Donor></Donor>
             </div>
 
