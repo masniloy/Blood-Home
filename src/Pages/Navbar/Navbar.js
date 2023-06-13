@@ -7,7 +7,11 @@ import { AuthContext } from '../../Context/AuthPro/AuthPro';
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
-    console.log(user);
+    console.log(user?.displayName);
+    // var name = user?.displayName.split(" ").splice(-1)[0];
+    // console.log(name);
+
+
 
     const handleLogOut = () => {
         logOut()
@@ -20,7 +24,7 @@ const Navbar = () => {
         <div className='mb-20'>
             <div className="navbar bg-red-600 fixed top-0 z-50 ">
                 <div className="navbar-start ">
-                    <div className="dropdown">
+                    <div className="dropdown ">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
@@ -67,29 +71,37 @@ const Navbar = () => {
 
 
 
-                    <ul className="menu menu-horizontal px-1">
 
-                        <li tabIndex={0} className='mr-2'>
+                    <div className="dropdown dropdown-end">
+                        <label tabIndex={0} className="btn m-1 text-white bg-red-500 border-red-500 hover:bg-red-600 hover:border-red-600">
                             {
-                                user?.email ? <span className='text-white'>{user.email}</span>
-                                    : <a className='text-white'>
-                                        <Link to=""><FontAwesomeIcon className=' h-5  ' icon={faUser} /></Link>
+                                user?.email ?
+                                    <a className='text-white flex w-15'>
+                                        <Link to=""><FontAwesomeIcon className=' h-4  ' icon={faUser} /></Link>
                                         <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                                     </a>
+                                    // <span className='text-white'>{user?.displayName}</span>
+                                    :
+                                    <Link to="/Login" className='text-white hover:' ><a>Login</a></Link>
                             }
 
-                            <ul className="p-2 bg-white">
-                                {
-                                    user?.email ?
-                                        <Link onClick={handleLogOut}><li><a><b>Log Out</b></a></li></Link>
-                                        :
-                                        <Link to="/Login" ><li><a><b>Login</b></a></li></Link>
+                        </label>
+                        <ul tabIndex={0} className="dropdown-content menu  pt-4 shadow bg-base-100 rounded-box w-72">
+                            {
+                                user?.email ?
+                                    <>
+                                        <div className=''>
+                                            <span className=' font-bold'>{user?.displayName}</span><br />
+                                            <span className=' text-sm'>{user?.email}</span><br /><br />
+                                            <Link onClick={handleLogOut} ><li><a className=' bg-red-600 h-8 mt-5 text-white text-center rounded-b-xl'> <b>Log Out</b></a></li></Link>
+                                        </div>
+                                    </>
+                                    :
+                                    <a className=' w-0'></a>
 
-                                }
-                            </ul>
-                        </li>
-
-                    </ul>
+                            }
+                        </ul>
+                    </div>
 
                     {/* <Link to="/Login"><a className="btn border-white bg-red-600">Login</a></Link> */}
                 </div>

@@ -56,7 +56,7 @@ const DonateBlood = () => {
 
                     <div className='lg:stats w-full lg:px-44'>
                         <div className='m-2'>
-                            <input required name='name' type="text" placeholder="Name" className="input input-bordered w-96 max-w-xs bg-red-50  " />
+                            <input required name='name' value={user?.displayName} type="text" placeholder="Name" className="input input-bordered w-96 max-w-xs bg-red-50  " disabled />
                         </div>
                         <div className='m-2'>
                             <select name='blood' className="select select-bordered w-96 max-w-xs bg-red-50 " required>
@@ -105,7 +105,7 @@ const DonateBlood = () => {
                 <div className='stats'>
                     <div className="lg:stats w-full mb-5  lg:px-44">
                         <div className='m-2'>
-                            <input value={user.email} name='email' type="email" disabled className="input input-bordered w-96 max-w-xs bg-red-50" />
+                            <input value={user?.email} name='email' type="email" disabled className="input input-bordered w-96 max-w-xs bg-red-50" />
                         </div>
 
                         <div required className='m-2'>

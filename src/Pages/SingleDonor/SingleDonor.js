@@ -1,17 +1,16 @@
 import React from 'react';
 
+
 const SingleDonor = ({ donors }) => {
     console.log(donors);
-    const { name, blood, district, status } = donors;
+    const { name, blood, district, status, } = donors;
     console.log(name)
+
+
 
 
     return (
         <div>
-
-
-
-
             <td>
                 <div className="flex items-center space-x-3">
                     <div>
@@ -35,8 +34,14 @@ const SingleDonor = ({ donors }) => {
 
 
             <th>
-                <button className="btn bg-red-600 btn-xs border-red-600 px-6 ">Contact</button>
+
+
+
+                <button className="btn  bg-red-600 btn-xs border-red-600 px-6" onClick={() => window.my_modal_1.showModal()}>open modal</button>
             </th>
+
+
+
 
 
         </div>

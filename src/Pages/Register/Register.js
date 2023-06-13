@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faGoogle, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { AuthContext } from '../../Context/AuthPro/AuthPro';
 import reglogin from '../../New folder/image/regandlogin.gif';
 import googlelogo from '../../New folder/image/google logo.png';
@@ -10,7 +8,7 @@ import Loading from '../../Loading/Loading';
 
 const Register = () => {
 
-    const { creatUser, signInWithGoogle, loading } = useContext(AuthContext);
+    const { creatUser, updateUser, signInWithGoogle, loading } = useContext(AuthContext);
     console.log(creatUser);
     const location = useLocation();
     const fromLocat = location.state?.fromLocat?.pathname || '/';
@@ -23,9 +21,18 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, email, password);
 
-        creatUser(email, password)
+        creatUser(email, password, name)
             .then(result => {
                 const user = result.user;
+                const userInfo = {
+                    displayName: name
+
+                }
+                updateUser(userInfo)
+                    .then(() => {
+                        navigate('/');
+                    })
+                    .catch(err => console.log(err))
                 console.log('User:', user);
                 form.reset();
                 navigate(fromLocat, { replace: true })
