@@ -12,6 +12,7 @@ import Register from './Pages/Register/Register';
 import BloodRequest from './Pages/BloodRequest/BloodRequest';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 import Loading from './Loading/Loading';
+import AllBloodRequest from './Pages/AllBloodRequest/AllBloodRequest';
 
 function App() {
   const router = createBrowserRouter([
@@ -57,6 +58,11 @@ function App() {
         {
           path: '/BloodRequest',
           element: <PrivateRoutes><BloodRequest></BloodRequest></PrivateRoutes>
+
+        },
+        {
+          path: '/AllBloodRequest',
+          element: <PrivateRoutes><AllBloodRequest></AllBloodRequest></PrivateRoutes>
 
         }
       ]
