@@ -13,6 +13,7 @@ import BloodRequest from './Pages/BloodRequest/BloodRequest';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 import Loading from './Loading/Loading';
 import AllBloodRequest from './Pages/AllBloodRequest/AllBloodRequest';
+import DonorContract from './Pages/DonorContract/DonorContract';
 
 function App() {
   const router = createBrowserRouter([

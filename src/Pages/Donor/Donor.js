@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SingleDonor from '../SingleDonor/SingleDonor';
+import DonorContract from '../DonorContract/DonorContract';
 
 
 const Donor = () => {
@@ -10,6 +11,8 @@ const Donor = () => {
             .then(data => setDonorDetail(data))
     }, [])
     console.log(DonorDetail);
+
+    const [donorContact, setdonorContact] = useState(null);
 
     return (
         <div className='stats' >
@@ -37,7 +40,12 @@ const Donor = () => {
 
                                     key={donors._id}
                                     donors={donors}
+                                    setdonorContact={setdonorContact}
                                 ></SingleDonor>)
+                            }
+                            {
+                                donorContact &&
+                                <DonorContract contact={donorContact} setdonorContact={setdonorContact} ></DonorContract>
                             }
                         </tbody>
 

@@ -1,9 +1,10 @@
 import React from 'react';
+import DonateBlood from '../DonateBlood/DonateBlood';
 
 
-const SingleDonor = ({ donors }) => {
+const SingleDonor = ({ donors, setdonorContact }) => {
     console.log(donors);
-    const { name, blood, district, status, } = donors;
+    const { name, blood, district, status, phone, email } = donors;
     console.log(name)
 
 
@@ -37,8 +38,10 @@ const SingleDonor = ({ donors }) => {
 
 
 
-                <button className="btn  bg-red-600 btn-xs border-red-600 px-6" onClick={() => window.my_modal_1.showModal()}>open modal</button>
+
+                <label htmlFor="bookModal" className="btn  bg-red-600 btn-xs border-red-600 px-6" onClick={() => setdonorContact(donors)}>Contact</label>
             </th>
+
 
 
 
