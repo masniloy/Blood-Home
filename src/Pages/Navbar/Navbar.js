@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { AuthContext } from '../../Context/AuthPro/AuthPro';
+import avatar from "../../New folder/image/avatar.gif"
+import avatar1 from "../../New folder/image/avatar1.gif"
 
 const Navbar = () => {
 
@@ -40,7 +42,17 @@ const Navbar = () => {
                                     <Link to="/FiendDonor"><li><a>Fiend Donor</a></li></Link>
 
                                     <Link to="/DonateBlood"><li><a>Donate Blood</a></li></Link>
-                                    <Link to="/BloodRequest"><li><a>Blood Request</a></li></Link>
+
+                                </ul>
+                            </li>
+                            <li tabIndex={0}>
+                                <a className='justify-between'>
+                                    Request
+                                    <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+                                </a>
+                                <ul className="p-2 bg-white">
+                                    <Link to="/BloodRequest" className=' hover:'><li><a><b>Post Blood Request</b></a></li></Link>
+                                    <Link to="/AllBloodRequest"><li><a><b>All Blood Request</b></a></li></Link>
                                 </ul>
                             </li>
                             <Link to="/About"><li><a >About Us</a></li></Link>
@@ -85,31 +97,53 @@ const Navbar = () => {
 
 
                     <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn m-1 text-white bg-red-500 border-red-500 hover:bg-red-600 hover:border-red-600">
+                        <label tabIndex={0} className="btn m-1 text-white bg-red-600 border-red-600 hover:bg-red-600 hover:border-red-600">
                             {
                                 user?.email ?
-                                    <a className='text-white flex w-15'>
-                                        <Link to=""><FontAwesomeIcon className=' h-4  ' icon={faUser} /></Link>
-                                        <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                                    <a className='text-white flex'>
+                                        <div className="avatar online">
+                                            <div className="w-10 rounded-full">
+                                                <img src={avatar} />
+                                            </div>
+                                        </div><br />
                                     </a>
                                     // <span className='text-white'>{user?.displayName}</span>
                                     :
-                                    <Link to="/Login" className='text-white hover:' ><a>Login</a></Link>
+
+                                    <a className='text-white flex'>
+                                        <div className="avatar ">
+                                            <div className="w-10 rounded-full">
+                                                <img src={avatar} />
+                                            </div>
+                                        </div><br />
+                                    </a>
                             }
 
                         </label>
-                        <ul tabIndex={0} className="dropdown-content menu  pt-4 shadow bg-base-100 rounded-box w-72">
+                        <ul tabIndex={0} className="dropdown-content menu  pt-4 shadow bg-base-100 rounded-lg w-72">
                             {
                                 user?.email ?
                                     <>
                                         <div className=''>
+                                            <div className="avatar  rounded-full">
+                                                <div className="w-24 rounded-full">
+                                                    <img src={avatar} />
+                                                </div>
+                                            </div><br />
+
+
                                             <span className=' font-bold'>{user?.displayName}</span><br />
                                             <span className=' text-sm'>{user?.email}</span><br /><br />
-                                            <Link onClick={handleLogOut} ><li><a className=' bg-red-600 h-8 mt-5 text-white text-center rounded-b-xl'> <b>Log Out</b></a></li></Link>
+                                            <Link onClick={handleLogOut} ><li><a className=' bg-red-600 h-10 mt-3 text-white text-center rounded-b-lg'> <b>Log Out</b></a></li></Link>
                                         </div>
                                     </>
                                     :
-                                    <a className=' w-0'></a>
+                                    <>
+                                        <div className=''>
+                                            <Link to="/Login"  ><li><a className='  -mt-4  text-center h-10 rounded-b-lg'> <b>Login <FontAwesomeIcon className=' h-3  ml-20  ' icon={faArrowRight} /></b></a></li></Link>
+                                            <Link to="/Register"  ><li><a className=' bg-red-600 h-10   text-white text-center rounded-b-lg'> <b>Register <FontAwesomeIcon className=' h-3  ml-16  ' icon={faArrowRight} /></b></a></li></Link>
+                                        </div>
+                                    </>
 
                             }
                         </ul>

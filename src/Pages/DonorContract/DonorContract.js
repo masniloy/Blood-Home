@@ -33,7 +33,7 @@ const DonorContract = ({ contact }) => {
 
                         </div><br />
 
-                        <span className="label-text text-red-600"><span className='font-bold'>Note :</span> If you disturb any Donor Without reason, we must block your account !</span>
+                        <span className="label-text text-red-600"><span className='font-bold'>Note :</span> If you disturb any Donor Without reason, we must block your account. Also, we must take legal action !</span>
 
 
                     </div>

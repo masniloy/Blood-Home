@@ -7,9 +7,6 @@ const SingleDonor = ({ donors, setdonorContact }) => {
     const { name, blood, district, status, phone, email } = donors;
     console.log(name)
 
-
-
-
     return (
         <div>
             <td>

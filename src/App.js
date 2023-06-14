@@ -40,7 +40,7 @@ function App() {
         },
         {
           path: '/FiendDonor',
-          element: <FiendDonor></FiendDonor>
+          element: <PrivateRoutes><FiendDonor></FiendDonor></PrivateRoutes>
         },
         {
           path: '/Login',
