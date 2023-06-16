@@ -5,7 +5,7 @@ import SingleBloodRequest from '../SingleBloodRequest/SingleBloodRequest';
 const AllBloodRequest = () => {
     const [BloodRequest, setBloodRequest] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/BloodRequest')
+        fetch('https://blood-home-server-masniloy.vercel.app/BloodRequest')
             .then(res => res.json())
             .then(data => setBloodRequest(data))
     }, [])

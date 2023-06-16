@@ -29,7 +29,7 @@ const BloodRequest = () => {
         }
 
 
-        fetch('http://localhost:5000/BloodRequest', {
+        fetch('https://blood-home-server-masniloy.vercel.app/BloodRequest', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
