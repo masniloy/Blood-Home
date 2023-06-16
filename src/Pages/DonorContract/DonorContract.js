@@ -10,11 +10,11 @@ const DonorContract = ({ contact }) => {
                 <input type="checkbox" id="bookModal" className="modal-toggle" />
                 <div className="modal">
                     <div className="modal-box relative h-96">
-                        <label htmlFor="bookModal" className="btn btn-sm btn-circle absolute right-2 top-2 bg-red-600 border-red-600">✕</label>
-                        <div className=' text-center bg-red-100 h-20   p-4 -mt-6 -mx-6  rounded-t-2xl mb-5'>
-                            <h1 className=" font-bold text-xl">{name}</h1>
+                        <label htmlFor="bookModal" className="btn btn-sm btn-circle absolute right-2 top-2 bg-white text-black hover:bg-red-100">✕</label>
+                        <div className=' text-center bg-red-600 h-20   p-4 -mt-6 -mx-6  rounded-t-2xl mb-5'>
+                            <h1 className=" font-bold text-xl text-white">{name}</h1>
 
-                            <span className="label-text font-bold">Contact Details</span>
+                            <span className="label-text font-bold text-white">Contact Details</span>
 
                         </div>
 

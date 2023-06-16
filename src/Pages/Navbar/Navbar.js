@@ -100,8 +100,8 @@ const Navbar = () => {
                         <label tabIndex={0} className="btn m-1 text-white bg-red-600 border-red-600 hover:bg-red-600 hover:border-red-600">
                             {
                                 user?.email ?
-                                    <a className='text-white flex'>
-                                        <div className="avatar online">
+                                    <a className='text-white  flex'>
+                                        <div className="avatar online ">
                                             <div className="w-10 rounded-full">
                                                 <img src={avatar} />
                                             </div>
