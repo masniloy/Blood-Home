@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const ContactUs = () => {
+    useEffect(() => {
+        Aos.init({ duration: 800 });
+    })
     return (
-        <div className='stats w-full max-w-7xl'>
+        <div data-aos="fade-up" className='stats w-full max-w-7xl'>
             <div className=' bg-red-100 p-5 stats-vertical' >
                 <h1 className='text-3xl font-bold my-3'>Contact us</h1>
                 <input type="text" placeholder="Your Name" className="input input-sm mx-4 my-2 input-bordered  w-full max-w-xs drop-shadow-md" />

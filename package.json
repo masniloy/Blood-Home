@@ -11,6 +11,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "aos": "^2.3.4",
     "babel-plugin-macros": "^3.1.0",
     "daisyui": "^2.51.5",
     "firebase": "^9.22.0",

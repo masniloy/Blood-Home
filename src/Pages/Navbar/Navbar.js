@@ -1,12 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { AuthContext } from '../../Context/AuthPro/AuthPro';
 import avatar from "../../New folder/image/avatar.gif"
-import avatar1 from "../../New folder/image/avatar1.gif"
+import logo3 from "../../New folder/logo/logo3.jpg"
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const Navbar = () => {
+
+    useEffect(() => {
+        Aos.init({ duration: 800 });
+    })
 
     const { user, logOut } = useContext(AuthContext);
     console.log(user?.displayName);
@@ -60,7 +66,7 @@ const Navbar = () => {
 
 
                     </div>
-                    <Link to="/"><a className="btn btn-ghost normal-case text-xl text-white">Blood Home</a></Link>
+                    <Link to="/"><a className="  normal-case text-xl text-white"><img className='h-14' src={logo3} alt="" />  </a></Link>
                 </div>
 
 

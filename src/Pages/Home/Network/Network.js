@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUsers, faLocationDot, faDroplet, faHospitalUser } from '@fortawesome/free-solid-svg-icons'
-
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 // shadow-xl lg:-ml-32
 
 
 const Network = () => {
+
+    useEffect(() => {
+        Aos.init({ duration: 800 });
+    })
+
     return (
-        <div>
+        <div data-aos="fade-up" className='mt-20 mb-52'>
             <div className="stats shado  w-full max-w-7xl h-32 mt-20 bg-red-100  ">
 
                 <div className="stat">
