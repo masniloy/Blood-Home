@@ -7,7 +7,7 @@ const MyBloodRequest = () => {
     const { user } = useContext(AuthContext)
     const [cart, setCart] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/BloodRequest/${user?.email}`)
+        fetch(`https://blood-home-server.vercel.app/BloodRequest/${user?.email}`)
             .then(res => res.json())
             .then(data => setCart(data))
     },)

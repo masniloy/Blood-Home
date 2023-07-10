@@ -8,7 +8,7 @@ const BloodList = ({ request }) => {
         const agree = window.confirm(`Are you sure you want to delete: ${name}`)
 
         if (agree) {
-            fetch(`http://localhost:5000/BloodRequest/${_id}`, {
+            fetch(`https://blood-home-server.vercel.app/BloodRequest/${_id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())

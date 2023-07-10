@@ -13,55 +13,55 @@ import DonorContract from "../DonorContract/DonorContract";
 
 const FiendDonor = () => {
 
+    const [findDonor, setFindDonor] = useState({
+        blood: '',
+        district: '',
+        status: ''
+    });
 
-    const getInitialStateBlood = () => {
-        const blood = " ";
-        return blood;
-    };
-    const [blood, setblood] = useState(getInitialStateBlood);
-    const handleChangeBlood = (e) => {
-        setblood(e.target.value);
-    };
-
-
-
-
-    const getInitialStateDistrict = () => {
-        const district = " ";
-        return district;
-    };
-    const [district, setdistrict] = useState(getInitialStateDistrict);
-    const handleChangeDistrict = (ex) => {
-        setdistrict(ex.target.value);
-    };
-
-
-
-
-    const getInitialStateStatus = () => {
-        const status = " ";
-        return status;
-    };
-    const [status, setStatus] = useState(getInitialStateStatus);
-    const handleChangeStatus = (ex) => {
-        setStatus(ex.target.value);
-    };
-
-
-    // `http://localhost:5000/DonorDetail/${district}`
+    const handleSelect = (e) => {
+        setFindDonor((prev) => ({
+            ...prev,
+            [e.target.name]: e.target.value
+        }))
+    }
 
 
     const [DonorDetail, setDonorDetail] = useState([]);
 
-    console.log(district);
-
     useEffect(() => {
-        const url = `http://localhost:5000/DonorDetail/query/?district=${district}&blood=${blood}&status=${status}`
+        console.log("findDonor ", findDonor);
+        const { blood, district, status } = findDonor;
+
+        let url = "https://blood-home-server.vercel.app/DonorDetail/query/?";
+        let params = [];
+
+        if (blood && blood.trim() !== '') {
+            params.push(`blood=${blood.replace('+', '%2B')}`);
+        }
+
+        if (district && district.trim() !== '') {
+            params.push(`district=${district}`);
+        }
+
+        if (status && status.trim() !== '') {
+            params.push(`status=${status}`);
+        }
+
+        if (params.length > 0) {
+            url += params.join('&');
+        } else {
+            return; // Return if there are no parameters
+        }
 
         fetch(url)
             .then(res => res.json())
-            .then(data => setDonorDetail(data).reset())
-    }, [district, blood, status])
+            .then(data => {
+                setDonorDetail(data);
+                console.log("fetch data is ", data);
+            })
+            .catch(err => console.log(err))
+    }, [findDonor])
 
     const [donorContact, setdonorContact] = useState(null);
 
@@ -80,7 +80,7 @@ const FiendDonor = () => {
             <div className=' bg-red-100 -mt-10'>
                 <form className='my-16  lg:stats p-11'>
                     <div className='mx-1 '>
-                        <select name="blood" onChange={handleChangeBlood} className="select select-bordered w-56 max-w-xs bg-red-50">
+                        <select name="blood" onChange={handleSelect} className="select select-bordered w-56 max-w-xs bg-red-50">
                             <option disabled selected>Blood Group</option>
                             <option value='A+'>A+</option>
                             <option value='A-'>A-</option>
@@ -94,7 +94,7 @@ const FiendDonor = () => {
                     </div><br />
 
                     <div className='mx-1'>
-                        <select district={district} name='district' onChange={handleChangeDistrict} className="select select-bordered w-56 max-w-xs bg-red-50">
+                        <select name='district' onChange={handleSelect} className="select select-bordered w-56 max-w-xs bg-red-50">
                             <option disabled selected>District</option>
                             <option >Bagerhat</option>
                             <option >Chuadanga</option>
@@ -118,10 +118,10 @@ const FiendDonor = () => {
                     </div><br /> */}
 
                     <div className='mx-1'>
-                        <select className="select select-bordered w-56 max-w-xs bg-red-50" onChange={handleChangeStatus}>
+                        <select name="status" className="select select-bordered w-56 max-w-xs bg-red-50" onChange={handleSelect}>
                             <option disabled selected>Status</option>
                             <option>Eligible</option>
-
+                            <option>Not Eligible</option>
                         </select>
                     </div><br />
                     {/* <Link to='/Do'>
@@ -130,9 +130,9 @@ const FiendDonor = () => {
 
                 </form>
             </div>
-            <h1>{district}</h1>
-            <h1>{blood}</h1>
-            <h1>{status}</h1>
+            {/* <h1>{findDonor.district}</h1>
+            <h1>{findDonor.blood}</h1>
+            <h1>{findDonor.status}</h1> */}
 
             <div className=' mt-10'>
 
