@@ -57,8 +57,9 @@ const Navbar = () => {
                                     <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                                 </a>
                                 <ul className="p-2 bg-white">
-                                    <Link to="/BloodRequest" className=' hover:'><li><a><b>Post Blood Request</b></a></li></Link>
                                     <Link to="/AllBloodRequest"><li><a><b>All Blood Request</b></a></li></Link>
+                                    <Link to="/BloodRequest" className=' hover:'><li><a><b>Post Blood Request</b></a></li></Link>
+
                                 </ul>
                             </li>
                             <Link to="/About"><li><a >About Us</a></li></Link>
@@ -90,8 +91,9 @@ const Navbar = () => {
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </a>
                             <ul className="p-2 bg-white">
-                                <Link to="/BloodRequest" className=' hover:'><li><a><b>Post Blood Request</b></a></li></Link>
                                 <Link to="/AllBloodRequest"><li><a><b>All Blood Request</b></a></li></Link>
+                                <Link to="/BloodRequest" className=' hover:'><li><a><b>Post Blood Request</b></a></li></Link>
+
                             </ul>
                         </li>
                         <Link to="/About"><li><a className='text-white'>About Us</a></li></Link>
@@ -140,7 +142,8 @@ const Navbar = () => {
 
                                             <span className=' font-bold'>{user?.displayName}</span><br />
                                             <span className=' text-sm'>{user?.email}</span><br /><br />
-                                            <Link onClick={handleLogOut} ><li><a className=' bg-red-600 h-10 mt-3 text-white text-center rounded-b-lg'> <b>Log Out</b></a></li></Link>
+                                            <Link to='/MyBloodRequest' ><li><a className=' bg-red-100 text-center hover:bg-white h-10 '> <b>My Blood Request</b></a></li></Link>
+                                            <Link onClick={handleLogOut} ><li><a className=' bg-red-600 h-10  text-white text-center rounded-b-lg'> <b>Log Out</b></a></li></Link>
                                         </div>
                                     </>
                                     :

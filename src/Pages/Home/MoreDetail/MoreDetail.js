@@ -15,7 +15,7 @@ const MoreDetail = () => {
     })
 
     return (
-        <div className='w-full max-w-7xl p-5 pb-10 mx-auto mb-10 gap-5 columns-3 mt-20 '>
+        <div className='w-full max-w-7xl p-5 pb-10 mx-auto mb-40 gap-5 columns-3 mt-20 '>
 
             <img data-aos="fade-down-right" src={img1} alt="Image" /><br />
             <img data-aos="fade-up-right" src={img2} alt="Image" />

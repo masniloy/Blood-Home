@@ -24,7 +24,7 @@ const DonateBlood = () => {
         //     alert('Use a valid phone number')
         // }
 
-        fetch('https://blood-home-server.vercel.app/DonorDetail', {
+        fetch('http://localhost:5000/DonorDetail', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

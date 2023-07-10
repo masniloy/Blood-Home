@@ -14,6 +14,9 @@ import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 import Loading from './Loading/Loading';
 import AllBloodRequest from './Pages/AllBloodRequest/AllBloodRequest';
 import DonorContract from './Pages/DonorContract/DonorContract';
+import Banner from './Pages/Home/Banner/Banner';
+import Do from './Pages/FiendDonor/Do';
+import MyBloodRequest from './Pages/MyBloodRequest/MyBloodRequest';
 
 function App() {
   const router = createBrowserRouter([
@@ -45,6 +48,10 @@ function App() {
         {
           path: '/Login',
           element: <Login></Login>
+        },
+        {
+          path: '/Banner',
+          element: <Banner></Banner>
         }
         ,
         {
@@ -59,6 +66,11 @@ function App() {
         {
           path: '/BloodRequest',
           element: <PrivateRoutes><BloodRequest></BloodRequest></PrivateRoutes>
+
+        },
+        {
+          path: '/MyBloodRequest',
+          element: <PrivateRoutes><MyBloodRequest></MyBloodRequest></PrivateRoutes>
 
         },
         {

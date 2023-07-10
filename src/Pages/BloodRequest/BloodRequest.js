@@ -15,6 +15,7 @@ const BloodRequest = () => {
         const name = form.name.value;
         const blood = form.blood.value;
         const phone = form.phone.value;
+        const email = user?.email;
         const district = form.district.value;
         const status = form.status.value;
         const alternativephone = form.alternativephone.value;
@@ -25,11 +26,11 @@ const BloodRequest = () => {
         const reason = form.reason.value;
 
         const bloodrequest = {
-            name, blood, phone, district, status, alternativephone, bloodbags, date, policestation, donatonpoint, reason
+            name, blood, phone, district, status, alternativephone, bloodbags, email, date, policestation, donatonpoint, reason
         }
 
 
-        fetch('https://blood-home-server-masniloy.vercel.app/BloodRequest', {
+        fetch('http://localhost:5000/BloodRequest', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -67,7 +68,8 @@ const BloodRequest = () => {
                             <input name="phone" type="phone" placeholder="Phone" className="input input-bordered w-96 max-w-xs bg-red-50  " required />
                         </div>
                     </div>
-                </div>
+                </div><br />
+
                 <div className='stats'>
                     <div className='lg:stats w-full mt-5 lg:px-44'>
                         <div className="mx-3.5">

@@ -13,7 +13,7 @@ const Network = () => {
     })
 
     return (
-        <div data-aos="fade-up" className='mt-20 mb-52'>
+        <div data-aos="flip-down" className='mt-20 mb-52'>
             <div className="stats shado  w-full max-w-7xl h-32 mt-20 bg-red-100  ">
 
                 <div className="stat">

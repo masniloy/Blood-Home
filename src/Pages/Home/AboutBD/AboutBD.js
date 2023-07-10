@@ -25,10 +25,10 @@ const AboutBD = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img data-aos="fade-right" src={about} className="max-w-md rounded-lg " />
                     <div data-aos="fade-up">
-                        <h1 className="text-3xl font-bold">About Blood Home!</h1>
-                        <p className="py-6 text-justify">Though Bangladesh has more than 160 million people, the number of safe blood bank is very few. Without divisional towns, there is hardly any blood bank. But a huge amount of blood is needed for treatment purposes. A good number of accidents take place every day where blood needs essentially. As a result, people fall in real trouble to manage blood. But there are many blood donors who are interested in donating blood but don’t know who needs blood. The communication gap is resulting in the loss of many lives. <br /><br />
+                        <h1 className="text-3xl font-bold">About Blood Home!</h1><br /><br />
+                        <p className=" text-justify">Though Bangladesh has more than 166 million people, there are very few safe blood banks. Without divisional towns, there is hardly any blood bank. But a huge amount of blood is needed for treatment purposes. A good number of accidents take place every day where blood needs essentially. <br /><br />
 
-                            Blood Home comes into the scenario to reduce or minimize the communication gap and connects people in a moment using the amazing power of SMS and email. As Blood Home services can also be availed by SMS, people from any class of the society can easily avail of Blood Home services.</p>
+                            As a result, people fall into real trouble managing blood. But there are many blood donors who are interested in donating blood but don’t know who needs blood. That's why I developed a web application "BLOOD HOME" which is bridge the gap between blood donors and those in need of blood transfusions. BLOOD HOME provides a user-friendly and efficient system for connecting donors with patients, ensuring a timely and reliable supply of blood.</p>
                         <Link to="/About"><button className="btn drop-shadow-lg m-5 border-red-600 bg-red-600">Learn More About Us</button></Link>
                     </div>
                 </div>

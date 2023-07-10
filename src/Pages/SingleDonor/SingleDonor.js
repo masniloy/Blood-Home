@@ -3,9 +3,9 @@ import DonateBlood from '../DonateBlood/DonateBlood';
 
 
 const SingleDonor = ({ donors, setdonorContact }) => {
-    console.log(donors);
+
     const { name, blood, district, status, phone, email } = donors;
-    console.log(name)
+
 
     return (
         <div>
