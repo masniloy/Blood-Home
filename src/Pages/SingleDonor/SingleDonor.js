@@ -1,5 +1,6 @@
 import React from 'react';
 import DonateBlood from '../DonateBlood/DonateBlood';
+import { Link } from 'react-router-dom';
 
 
 const SingleDonor = ({ donors, setdonorContact }) => {
@@ -37,6 +38,7 @@ const SingleDonor = ({ donors, setdonorContact }) => {
 
 
                 <label htmlFor="bookModal" className="btn  bg-red-600 btn-xs border-red-600 px-6" onClick={() => setdonorContact(donors)}>Contact</label>
+                {/* <Link to="/Chat" htmlFor="bookModal" className="btn  bg-red-600 btn-xs border-red-600 px-6" >Contact</Link> */}
             </th>
 
 

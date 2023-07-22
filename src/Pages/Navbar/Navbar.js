@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faArrowRight, faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import { AuthContext } from '../../Context/AuthPro/AuthPro';
 import avatar from "../../New folder/image/avatar.gif"
 import logo3 from "../../New folder/logo/logo3.jpg"
@@ -62,7 +62,8 @@ const Navbar = () => {
 
                                 </ul>
                             </li>
-                            <Link to="/About"><li><a >About Us</a></li></Link>
+                            <Link to="/About"><li><a >About</a></li></Link>
+                            <Link to="/Chat"><li><FontAwesomeIcon className='  h-5 ' icon={faCommentDots} /></li></Link>
                         </ul>
 
 
@@ -96,7 +97,8 @@ const Navbar = () => {
 
                             </ul>
                         </li>
-                        <Link to="/About"><li><a className='text-white'>About Us</a></li></Link>
+                        <Link to="/About"><li><a className='text-white'>About</a></li></Link>
+                        <Link to="/Chat"><li><FontAwesomeIcon className=' text-white h-5 ' icon={faCommentDots} /></li></Link>
                     </ul>
                 </div>
                 <div className="navbar-end">
@@ -109,9 +111,9 @@ const Navbar = () => {
                             {
                                 user?.email ?
                                     <a className='text-white  flex'>
-                                        <div className="avatar online ">
+                                        <div className="avatar  ">
                                             <div className="w-10 rounded-full">
-                                                <img src={avatar} />
+                                                <img src={user?.photoURL} />
                                             </div>
                                         </div><br />
                                     </a>
@@ -133,9 +135,9 @@ const Navbar = () => {
                                 user?.email ?
                                     <>
                                         <div className=''>
-                                            <div className="avatar  rounded-full">
+                                            <div className="avatar online  rounded-full">
                                                 <div className="w-24 rounded-full">
-                                                    <img src={avatar} />
+                                                    <img src={user?.photoURL} />
                                                 </div>
                                             </div><br />
 

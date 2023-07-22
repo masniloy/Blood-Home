@@ -4,14 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthPro from './Context/AuthPro/AuthPro';
+import { ChatContextProvider } from './Context/AuthPro/ChatContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <AuthPro>
-      <App />
-    </AuthPro>
-  </React.StrictMode>
+
+  <AuthPro>
+    <ChatContextProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ChatContextProvider>
+  </AuthPro>
+
+
 );
 
 // If you want to start measuring performance in your app, pass a function

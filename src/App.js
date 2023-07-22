@@ -1,7 +1,7 @@
 
 import './App.css';
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
 import Main from './Pages/Main/Main';
 import Home from './Pages/Home/Home/Home';
 import About from './Pages/About/About';
@@ -17,8 +17,12 @@ import DonorContract from './Pages/DonorContract/DonorContract';
 import Banner from './Pages/Home/Banner/Banner';
 import Do from './Pages/FiendDonor/Do';
 import MyBloodRequest from './Pages/MyBloodRequest/MyBloodRequest';
+import Chat from './Pages/Chat/Chat';
+import Myok from './Pages/Chat/Myok';
+import ChatHome from './Pages/Chat/ChatHome';
 
 function App() {
+
   const router = createBrowserRouter([
     {
       path: '/',
@@ -61,6 +65,10 @@ function App() {
         {
           path: '/Loading',
           element: <Loading></Loading>
+        },
+        {
+          path: '/Chat',
+          element: <PrivateRoutes><ChatHome></ChatHome></PrivateRoutes>
         }
         ,
         {
@@ -73,6 +81,11 @@ function App() {
           element: <PrivateRoutes><MyBloodRequest></MyBloodRequest></PrivateRoutes>
 
         },
+        // {
+        //   path: '/Chat',
+        //   element: <PrivateRoutes><Myok></Myok></PrivateRoutes>
+
+        // },
         {
           path: '/AllBloodRequest',
           element: <PrivateRoutes><AllBloodRequest></AllBloodRequest></PrivateRoutes>
@@ -83,11 +96,29 @@ function App() {
   ])
 
   return (
-    <div className="App ">
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/ChatHome2">
+            <Route
+              index
+              element={
 
-      <RouterProvider router={router}></RouterProvider>
+                <PrivateRoutes><ChatHome></ChatHome></PrivateRoutes>
 
-    </div>
+              }
+            />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+      <div className="App ">
+
+        <RouterProvider router={router}></RouterProvider>
+
+      </div>
+
+    </>
+
   );
 }
 
