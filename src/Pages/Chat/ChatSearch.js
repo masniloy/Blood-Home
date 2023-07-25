@@ -36,9 +36,9 @@ const ChatSearch = () => {
         }
     };
 
-    const handleKey = (e) => {
-        e.code === "Enter" && handleSearch();
-    };
+    // const handleKey = (e) => {
+    //     e.code === "Enter" && handleSearch();
+    // };
 
     const handleSelect = async () => {
         //check whether the group(chats in firestore) exists, if not create
@@ -78,10 +78,10 @@ const ChatSearch = () => {
         setUsername("")
     };
     return (
-        <div className="search border-b border-white rounded-xl">
-            <div className="searchForm">
+        <div className=" border-b border-white rounded-xl">
+            <div className="">
 
-                <input onKeyDown={handleKey}
+                <input onKeyDown={handleSearch}
                     onChange={(e) => setUsername(e.target.value)}
                     value={username}
                     type="text" placeholder="Find a user" className="input input-sm  w-full max-w-full   " />
